@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-
+using System.Web.Http.Cors;
 namespace WebApi
 {
     public static class WebApiConfig
@@ -10,7 +10,7 @@ namespace WebApi
         public static void Register(HttpConfiguration config)
         {
             // Servizi e configurazione dell'API Web
-
+            config.EnableCors( new EnableCorsAttribute("http://localhost:4200/", "*","*"));
             // Route dell'API Web
             config.MapHttpAttributeRoutes();
 
